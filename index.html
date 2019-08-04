@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="https://kaios.net/assets/icon.png">
+  <title>safer-chemicals-network</title>
+  <style>
+    @import url("https://kaios.net/assets/main.css");
+
+    #graph {
+      margin: 36px 0;
+      box-sizing: border-box;
+      border: 1px solid rgb(125, 128, 132);
+    }
+
+    .edge {
+      stroke: rgb(125, 128, 132);
+    }
+
+    .node circle {
+      fill: black;
+      stroke: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contain">
+    <div class="inner">
+      <div class="main">
+        <div class="fig" style="margin-left: -40px;">
+          <svg id="graph" width="800" height="480"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const dataUrl = "/data/network.json"; /* would be different in Jekyll */
+  </script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="/src/graph.js"></script> <!-- would be different in Jekyll -->
+</body>
+
+</html>
