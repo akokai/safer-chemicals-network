@@ -259,6 +259,16 @@
       "url": "https://www.bizngo.org/alternatives-assessment/chemical-alternatives-assessment-protocol",
       "title": "BizNGO Chemical Alternatives Assessment Protocol",
       "description": "The BizNGO Chemical Alternatives Assessment Protocol is a decision framework for substituting chemicals of concern to human health or the environment with safer alternatives. It describes a process for identifying alternatives to a chemical of concern, screening out equally hazardous alternatives, and selecting an alternative that is technically and economically viable and does not have the potential for causing significant environmental or human health impacts."
+    },
+    {
+      "id": "26",
+      "label": "QCAT",
+      "nodetype": "Method",
+      "collection": "GreenScreen",
+      "sector": "Chemicals",
+      "url": "https://ecology.wa.gov/Regulations-Permits/Guidance-technical-assistance/Preventing-hazardous-waste-pollution/Safer-alternatives/Quick-tool-for-assessing-chemicals",
+      "title": "Quick Chemical Assessment Tool",
+      "description": "QCAT is a chemical hazard assessment protocol developed by the Washington State (US) Department of Ecology, intended to help small and medium enterprises with safer chemical substitution."
     }
   ],
   "edges": [
@@ -338,6 +348,11 @@
       "description": "NA"
     },
     {
+      "source": "15",
+      "target": "26",
+      "description": "NA"
+    },
+    {
       "source": "16",
       "target": "0",
       "description": "NA"
@@ -386,6 +401,11 @@
       "source": "25",
       "target": "0",
       "description": "NA"
+    },
+    {
+      "source": "26",
+      "target": "0",
+      "description": "QCAT is based on a simplified version of the GreenScreen framework."
     }
   ]
 }
