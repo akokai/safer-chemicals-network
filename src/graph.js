@@ -12,6 +12,9 @@ var dimensions = document.getElementById("graph").getBoundingClientRect();
 var groupKey = GROUPING_OPTIONS[0];
 var groups;
 var groupPos;
+var color;
+var node;
+var edge;
 
 const simulation = d3
   .forceSimulation()
@@ -37,6 +40,14 @@ function getGroups(nodes) {
       value: item.values.length
     }))
     .sort((a, b) => b.value - a.value);
+}
+
+/** Create color map for groupings. */
+function createColorScale(groups) {
+  return d3
+    .scaleOrdinal()
+    .range(d3.schemeSet2)
+    .domain(groups.map(d => d.name));
 }
 
 /**
@@ -77,22 +88,32 @@ function updateGroupPositions() {
 }
 
 /** Update the legend to reflect categories for selected grouping option. */
-function updateLegend(nodes) {
-  const legend = d3.select(".legend");
+function updateLegend() {
+  const legend = d3.select("#legend");
   legend.selectAll("div").remove();
-  legend
+  const legendItems = legend
     .selectAll("div")
     .data(groups)
     .enter()
-    .append("div")
-    .text(d => d.name);
+    .append("div");
+  legendItems
+    .append("span")
+    .attr("class", "legend-item")
+    .style("background-color", d => color(d.name));
+  legendItems.append("span").text(d => d.name);
+}
+
+function updateNodeColors() {
+  node.selectAll("circle").style("fill", d => color(d[groupKey]));
 }
 
 /** Update everything when the grouping option is changed. */
 function selectGrouping(nodes) {
   groupKey = d3.select("select").property("value");
   groups = getGroups(nodes);
-  updateLegend(nodes);
+  color = createColorScale(groups);
+  updateLegend();
+  updateNodeColors();
   groupPos = getGroupPositions(groups);
   updateGroupPositions();
 }
@@ -159,7 +180,10 @@ function graph(data) {
         .on("end", dragended)
     );
 
-  node.append("circle").attr("r", 5);
+  node
+    .append("circle")
+    .attr("r", 5)
+    .style("fill", d => color(d[groupKey]));
   node
     .append("text")
     .text(d => d.label)
@@ -173,12 +197,10 @@ function graph(data) {
 
 /** Create DOM elements necessary for displaying the legend box & contents. */
 function createLegend(callback) {
-  const legendBox = fig.insert("div").attr("class", "legend-box");
+  const legendBox = fig.insert("div").attr("id", "legend-box");
   legendBox.append("h6").text("Group by");
 
-  const select = legendBox
-    .append("select")
-    .on("change", callback);
+  const select = legendBox.append("select").on("change", callback);
 
   select
     .selectAll("option")
@@ -188,16 +210,17 @@ function createLegend(callback) {
     .text(d => d);
 
   legendBox.append("h6").text("Legend");
-  legendBox.append("div").attr("class", "legend");
+  legendBox.append("div").attr("id", "legend");
 }
 
 /** Initialize visualization and set window resize behaviour. */
 function visualize(data) {
   groups = getGroups(data.nodes);
   groupPos = getGroupPositions(groups);
+  color = createColorScale(groups);
   updateGroupPositions();
   createLegend(event => selectGrouping(data.nodes));
-  updateLegend(data.nodes);
+  updateLegend();
   graph(data);
   window.addEventListener("resize", event => {
     updateDimensions(data.nodes);
