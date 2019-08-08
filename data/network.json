@@ -3,9 +3,9 @@
     {
       "id": "0",
       "label": "GreenScreen",
-      "nodetype": "Method",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "Resource Type": "Method",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
       "url": "https://www.greenscreenchemicals.org/learn/full-greenscreen-method",
       "title": "GreenScreen for Safer Chemicals",
       "description": "The GreenScreen for Safer Chemicals is a multi-endpoint chemical hazard assessment framework."
@@ -13,399 +13,498 @@
     {
       "id": "1",
       "label": "GHS",
-      "nodetype": "Method",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "Resource Type": "Method",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
       "url": "NA",
       "title": "Globally Harmonized System for Classification and Labeling of Chemicals",
       "description": "Placeholder description"
     },
     {
       "id": "2",
-      "label": "Safer Choice Standard",
-      "nodetype": "Standard",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "label": "Safer Choice",
+      "Resource Type": "Standard",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
       "url": "https://www.epa.gov/saferchoice/standard",
       "title": "US EPA Safer Choice Standard",
       "description": "Placeholder description"
     },
     {
       "id": "3",
+      "label": "C2C",
+      "Resource Type": "Certification",
+      "Sector": "Products",
+      "Topic": "Green Design",
+      "url": "NA",
+      "title": "Cradle-to-Cradle Certified",
+      "description": "Placeholder description"
+    },
+    {
+      "id": "4",
       "label": "HPD",
-      "nodetype": "Standard",
-      "collection": "GreenScreen",
-      "sector": "Built Environment",
+      "Resource Type": "Standard",
+      "Sector": "Built Environment",
+      "Topic": "Green Design",
       "url": "NA",
       "title": "Health Product Declaration (HPD)",
       "description": "The HPD is an open standard specification for the reporting of product contents and associated health information, for products used in the built environment."
     },
     {
-      "id": "4",
+      "id": "5",
       "label": "LEED",
-      "nodetype": "Certification",
-      "collection": "GreenScreen",
-      "sector": "Built Environment",
+      "Resource Type": "Certification",
+      "Sector": "Built Environment",
+      "Topic": "Green Design",
       "url": "https://www.usgbc.org/node/12022829?return=/credits/new-construction/v4.1/material-&view=language",
       "title": "LEED Rating System",
       "description": "LEED Building Product Disclosure and Optimization - Material Ingredients. "
     },
     {
-      "id": "5",
-      "label": "BIFMA e3",
-      "nodetype": "Standard",
-      "collection": "GreenScreen",
-      "sector": "Built Environment",
-      "url": "NA",
-      "title": "Placeholder title",
-      "description": "Placeholder description"
-    },
-    {
       "id": "6",
-      "label": "BIFMA LEVEL",
-      "nodetype": "Certification",
-      "collection": "GreenScreen",
-      "sector": "Built Environment",
+      "label": "BIFMA e3",
+      "Resource Type": "Standard",
+      "Sector": "Built Environment",
+      "Topic": "Green Design",
       "url": "NA",
       "title": "Placeholder title",
       "description": "Placeholder description"
     },
     {
       "id": "7",
-      "label": "EPEAT",
-      "nodetype": "Certification",
-      "collection": "GreenScreen",
-      "sector": "Electronics",
+      "label": "BIFMA LEVEL",
+      "Resource Type": "Certification",
+      "Sector": "Built Environment",
+      "Topic": "Green Design",
       "url": "NA",
       "title": "Placeholder title",
       "description": "Placeholder description"
     },
     {
       "id": "8",
-      "label": "TCO Certified",
-      "nodetype": "Certification",
-      "collection": "GreenScreen",
-      "sector": "Electronics",
+      "label": "EPEAT",
+      "Resource Type": "Certification",
+      "Sector": "Electronics",
+      "Topic": "Green Design",
       "url": "NA",
       "title": "Placeholder title",
       "description": "Placeholder description"
     },
     {
       "id": "9",
-      "label": "GreenScreen Certified",
-      "nodetype": "Certification",
-      "collection": "GreenScreen",
-      "sector": "Textiles",
+      "label": "TCO Certified",
+      "Resource Type": "Certification",
+      "Sector": "Electronics",
+      "Topic": "Green Design",
       "url": "NA",
       "title": "Placeholder title",
       "description": "Placeholder description"
     },
     {
       "id": "10",
-      "label": "ZDHC Chemicals Module",
-      "nodetype": "Certification",
-      "collection": "GreenScreen",
-      "sector": "Textiles",
+      "label": "GSC",
+      "Resource Type": "Certification",
+      "Sector": "Textiles",
+      "Topic": "Green Design",
       "url": "NA",
-      "title": "Placeholder title",
+      "title": "GreenScreen Certified",
       "description": "Placeholder description"
     },
     {
       "id": "11",
+      "label": "GSC-BP",
+      "Resource Type": "Certification",
+      "Sector": "Built Environment",
+      "Topic": "Green Design",
+      "url": "NA",
+      "title": "GreenScreen Certified for Building Products",
+      "description": "Placeholder description"
+    },
+    {
+      "id": "12",
+      "label": "ZDHC",
+      "Resource Type": "Certification",
+      "Sector": "Textiles",
+      "Topic": "Green Design",
+      "url": "NA",
+      "title": "ZDHC Chemicals Module",
+      "description": "Placeholder description"
+    },
+    {
+      "id": "13",
       "label": "EPA SCIL",
-      "nodetype": "Resource",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "Resource Type": "Resource",
+      "Sector": "Chemicals",
+      "Topic": "Green Design",
       "url": "https://www.epa.gov/saferchoice/safer-ingredients",
       "title": "US EPA Safer Chemical Ingredient List",
       "description": "Placeholder description"
     },
     {
-      "id": "12",
-      "label": "Chemical Hazard Data Commons",
-      "nodetype": "Resource",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
-      "url": "NA",
-      "title": "Placeholder title",
-      "description": "Placeholder description"
-    },
-    {
-      "id": "13",
-      "label": "Pharos",
-      "nodetype": "Resource",
-      "collection": "GreenScreen",
-      "sector": "Built Environment",
-      "url": "NA",
-      "title": "Placeholder title",
-      "description": "Placeholder description"
-    },
-    {
       "id": "14",
-      "label": "Material Wise",
-      "nodetype": "Resource",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "label": "Data Commons",
+      "Resource Type": "Resource",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
       "url": "NA",
-      "title": "Placeholder title",
+      "title": "Chemical Hazard Data Commons",
       "description": "Placeholder description"
     },
     {
       "id": "15",
-      "label": "IC2 Database",
-      "nodetype": "Resource",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
-      "url": "http://theic2.org/hazard-assessment",
-      "title": "IC2 Chemical Hazard Assessment Database",
-      "description": "The Interstate Chemical Clearinghouse (IC2) Chemical Hazard Assessment Database enables users to search for GreenScreen and Quick Chemical Assessment Tool (QCAT) assessments."
+      "label": "Pharos",
+      "Resource Type": "Resource",
+      "Sector": "Built Environment",
+      "Topic": "Green Design",
+      "url": "NA",
+      "title": "Placeholder title",
+      "description": "Placeholder description"
     },
     {
       "id": "16",
-      "label": "SUBSPORT",
-      "nodetype": "Resource",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "label": "Material Wise",
+      "Resource Type": "Resource",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
       "url": "NA",
       "title": "Placeholder title",
       "description": "Placeholder description"
     },
     {
       "id": "17",
-      "label": "ToxFMD DB",
-      "nodetype": "Resource",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
-      "url": "NA",
-      "title": "Placeholder title",
-      "description": "Placeholder description"
+      "label": "IC2 Database",
+      "Resource Type": "Resource",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
+      "url": "http://theic2.org/hazard-assessment",
+      "title": "IC2 Chemical Hazard Assessment Database",
+      "description": "The Interstate Chemical Clearinghouse (IC2) Chemical Hazard Assessment Database enables users to search for GreenScreen and Quick Chemical Assessment Tool (QCAT) assessments."
     },
     {
       "id": "18",
-      "label": "ChemSec Marketplace",
-      "nodetype": "Resource",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "label": "SUBSPORT",
+      "Resource Type": "Resource",
+      "Sector": "Chemicals",
+      "Topic": "Alternatives Assessment",
       "url": "NA",
       "title": "Placeholder title",
       "description": "Placeholder description"
     },
     {
       "id": "19",
-      "label": "USA/CA Safer Consumer Products",
-      "nodetype": "Policy",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
-      "url": "NA",
-      "title": "Placeholder title",
-      "description": "Alternatives Analysis Guide"
-    },
-    {
-      "id": "20",
-      "label": "USA/ME Safer Chemicals",
-      "nodetype": "Policy",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
-      "url": "NA",
-      "title": "Placeholder title",
-      "description": "Maine: Safer Chemicals in Children's Products Rules"
-    },
-    {
-      "id": "21",
-      "label": "USA/WA SB 5181",
-      "nodetype": "Policy",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
-      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5181&Chamber=Senate&Year=2013",
-      "title": "Placeholder title",
-      "description": "The bill didn't pass"
-    },
-    {
-      "id": "22",
-      "label": "CA DTSC Alternatives Assessment Guidance",
-      "nodetype": "Policy",
-      "collection": "GreenScreen",
-      "sector": "Products",
+      "label": "ToxFMD DB",
+      "Resource Type": "Resource",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
       "url": "NA",
       "title": "Placeholder title",
       "description": "Placeholder description"
     },
     {
-      "id": "23",
-      "label": "IC2 AA Guide",
-      "nodetype": "Method",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
-      "url": "http://theic2.org/alternatives_assessment_guide",
+      "id": "20",
+      "label": "Marketplace",
+      "Resource Type": "Resource",
+      "Sector": "Chemicals",
+      "Topic": "Green Design",
+      "url": "NA",
+      "title": "ChemSec Marketplace",
+      "description": "Placeholder description"
+    },
+    {
+      "id": "21",
+      "label": "WA PBDE Law",
+      "Resource Type": "Policy",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
+      "url": "NA",
       "title": "Placeholder title",
+      "description": "Fill in from GS origin story"
+    },
+    {
+      "id": "22",
+      "label": "Maine SCCP",
+      "Resource Type": "Policy",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
+      "url": "NA",
+      "title": "Maine (US) Safer Chemicals in Children's Products Rules",
+      "description": "Maine's Safer Chemicals in Children's Products Rules"
+    },
+    {
+      "id": "23",
+      "label": "DTSC AA",
+      "Resource Type": "Policy",
+      "Sector": "Products",
+      "Topic": "Alternatives Assessment",
+      "url": "NA",
+      "title": "CA DTSC Alternatives Assessment Guidance",
       "description": "Placeholder description"
     },
     {
       "id": "24",
-      "label": "NRC Framework Guide",
-      "nodetype": "Method",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "label": "QCAT",
+      "Resource Type": "Method",
+      "Sector": "Chemicals",
+      "Topic": "Hazard Assessment",
+      "url": "https://ecology.wa.gov/Regulations-Permits/Guidance-technical-assistance/Preventing-hazardous-waste-pollution/Safer-alternatives/Quick-tool-for-assessing-chemicals",
+      "title": "Quick Chemical Assessment Tool",
+      "description": "QCAT is a chemical hazard assessment protocol developed by the Washington State (US) Department of Ecology, intended to help small and medium enterprises with safer chemical substitution."
+    },
+    {
+      "id": "25",
+      "label": "IC2 AA",
+      "Resource Type": "Method",
+      "Sector": "Chemicals",
+      "Topic": "Alternatives Assessment",
+      "url": "http://theic2.org/alternatives_assessment_guide",
+      "title": "IC2 Alternatives Assessment Guide",
+      "description": "Placeholder description"
+    },
+    {
+      "id": "26",
+      "label": "NRC AA",
+      "Resource Type": "Method",
+      "Sector": "Chemicals",
+      "Topic": "Alternatives Assessment",
       "url": "https://www.nap.edu/catalog/18872/a-framework-to-guide-selection-of-chemical-alternatives",
       "title": "NRC Framework to Guide Selection of Chemical Alternatives",
       "description": "Placeholder description"
     },
     {
-      "id": "25",
-      "label": "BizNGO AA Protocol",
-      "nodetype": "Method",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
+      "id": "27",
+      "label": "BizNGO AA",
+      "Resource Type": "Method",
+      "Sector": "Chemicals",
+      "Topic": "Alternatives Assessment",
       "url": "https://www.bizngo.org/alternatives-assessment/chemical-alternatives-assessment-protocol",
       "title": "BizNGO Chemical Alternatives Assessment Protocol",
       "description": "The BizNGO Chemical Alternatives Assessment Protocol is a decision framework for substituting chemicals of concern to human health or the environment with safer alternatives. It describes a process for identifying alternatives to a chemical of concern, screening out equally hazardous alternatives, and selecting an alternative that is technically and economically viable and does not have the potential for causing significant environmental or human health impacts."
     },
     {
-      "id": "26",
-      "label": "QCAT",
-      "nodetype": "Method",
-      "collection": "GreenScreen",
-      "sector": "Chemicals",
-      "url": "https://ecology.wa.gov/Regulations-Permits/Guidance-technical-assistance/Preventing-hazardous-waste-pollution/Safer-alternatives/Quick-tool-for-assessing-chemicals",
-      "title": "Quick Chemical Assessment Tool",
-      "description": "QCAT is a chemical hazard assessment protocol developed by the Washington State (US) Department of Ecology, intended to help small and medium enterprises with safer chemical substitution."
+      "id": "28",
+      "label": "Levis",
+      "Resource Type": "Method",
+      "Sector": "Chemicals",
+      "Topic": "Green Design",
+      "url": "NA",
+      "title": "Levis Screened Chemistry",
+      "description": "Placeholder description"
+    },
+    {
+      "id": "29",
+      "label": "ILFI LPC",
+      "Resource Type": "Certification",
+      "Sector": "Products",
+      "Topic": "Green Design",
+      "url": "NA",
+      "title": "Living Product Challenge",
+      "description": "Placeholder description"
     }
   ],
   "edges": [
     {
       "source": "0",
       "target": "1",
-      "description": "GreenScreen uses technical criteria, metrics, and thresholds for hazard classification from GHS."
+      "description": "GreenScreen uses definitions, technical criteria, metrics, and thresholds for hazard classification derived from GHS.",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "0",
       "target": "2",
-      "description": "GreenScreen uses hazard endpoint definitions, the low/medium/high endpoint hazard level scheme, and also technical criteria and metrics for hazard classification from Safer Choice."
+      "description": "GreenScreen uses technical criteria, metrics, and thresholds for hazard classification derived from the Safer Choice Standard.",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "2",
+      "target": "1",
+      "description": "Safer Choice uses definitions, technical criteria, metrics, and thresholds for hazard classification derived from GHS.",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "3",
+      "target": "1",
+      "description": "The C2C Material Health Assessment methodology uses definitions, technical criteria, metrics, and thresholds for hazard classification derived from GHS.",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "3",
       "target": "0",
-      "description": "HPD uses GreenScreen List Translator\u2026"
+      "description": "Certified GreenScreen assessments may be used as sources of information for conducting C2C Material Health Assessments.",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "0",
+      "target": "2",
+      "description": "GreenScreen uses hazard endpoint definitions, the low/medium/high endpoint hazard level scheme, and also technical criteria and metrics for hazard classification from Safer Choice.",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "4",
       "target": "0",
-      "description": "The LEED material optimization credit allows\u2026"
+      "description": "HPD uses GreenScreen List Translator\u2026",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "5",
       "target": "0",
-      "description": "NA"
+      "description": "The LEED material optimization credit allows\u2026",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "6",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "7",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "8",
       "target": "0",
-      "description": "TCO Certified requires the use of GreenScreen to assess some [\u2026] chemicals for a required credit."
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "9",
       "target": "0",
-      "description": "NA"
+      "description": "TCO Certified requires the use of GreenScreen to assess some [\u2026] chemicals for a required credit.",
+      "Unnamed: 5": "\"GS is used to develop the acceptable lists for FRs and phthalates\""
     },
     {
       "source": "10",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "11",
-      "target": "2",
-      "description": "NA"
+      "target": "0",
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "12",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "13",
-      "target": "0",
-      "description": "NA"
+      "target": "2",
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "14",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "15",
       "target": "0",
-      "description": "NA"
-    },
-    {
-      "source": "15",
-      "target": "26",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "16",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "16",
+      "target": "3",
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "17",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "17",
+      "target": "24",
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "18",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "19",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "20",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "21",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "22",
       "target": "0",
-      "description": "NA"
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "23",
       "target": "0",
-      "description": "The IC2 Alternatives Assessment guide references the GreenScreen method as the preferred form of evaluation for the Hazard module."
+      "description": "NA",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "24",
       "target": "0",
-      "description": "The NRC Framework Guide references the GreenScreen method as an applicable tool for hazard assessment within the frameworks of alternatives assessment."
+      "description": "QCAT is based on a simplified version of the GreenScreen framework.",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "25",
       "target": "0",
-      "description": "NA"
+      "description": "The IC2 Alternatives Assessment guide references the GreenScreen method as the preferred form of evaluation for the Hazard module.",
+      "Unnamed: 5": "NA"
     },
     {
       "source": "26",
       "target": "0",
-      "description": "QCAT is based on a simplified version of the GreenScreen framework."
+      "description": "The NRC Framework Guide references the GreenScreen method as an applicable tool for hazard assessment within the frameworks of alternatives assessment.",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "27",
+      "target": "0",
+      "description": "NA",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "28",
+      "target": "0",
+      "description": "NA",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "29",
+      "target": "0",
+      "description": "NA",
+      "Unnamed: 5": "NA"
     }
   ]
 }

@@ -11,12 +11,46 @@ const height = +svg.attr("height");
 
 var node;
 var edge;
+var groupKey = "Resource Type";
+var groups;
+
+/**
+ * Return positioning force coordinates for each categorical grouping of nodes.
+ */
+function getGroups(nodes) {
+  const nested = d3
+    .nest()
+    .key(d => d[groupKey])
+    .entries(nodes)
+    .map(item => ({
+      name: item.key,
+      value: item.values.length
+    }))
+    .sort((a, b) => b.value - a.value);
+  const root = d3
+    .hierarchy({ name: "root", children: nested })
+    .sum(d => d.value);
+  const packed = d3.pack().size([width, height])(root);
+  return packed.children.reduce((ret, item) => {
+    ret[item.data.name] = { x: item.x, y: item.y };
+    return ret;
+  }, {});
+}
 
 const simulation = d3
   .forceSimulation()
-  .force("link", d3.forceLink().id(d => d.id)) // use link.strength() to gather groupings of nodes?
+  .force("center", d3.forceCenter(width / 2, height / 2))
+  .force("x", d3.forceX(node => groups[node[groupKey]].x).strength(0.1))
+  .force("y", d3.forceY(node => groups[node[groupKey]].y).strength(0.1))
+  .force(
+    "link",
+    d3
+      .forceLink()
+      .id(d => d.id)
+      .strength(0.01)
+  )
   .force("charge", d3.forceManyBody())
-  .force("center", d3.forceCenter(width / 2, height / 2));
+  .force("collide", d3.forceCollide(20));
 
 function ticked() {
   edge
@@ -56,6 +90,8 @@ function edgeClicked(d) {
 }
 
 function visualize(data) {
+  groups = getGroups(data.nodes);
+
   edge = svg
     .selectAll(".edge")
     .data(data.edges)
