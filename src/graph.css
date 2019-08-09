@@ -7,14 +7,28 @@
 }
 
 .edge {
-  /* TODO: too dark */
-  stroke: rgb(125, 128, 132);
+  stroke: rgb(178, 181, 182);
   stroke-width: 2px;
+  cursor: pointer;
+  transition: stroke-width 50ms;
+}
+
+.edge.selected {
+  stroke: rgb(164, 167, 169);
+  stroke-width: 4px;
+}
+
+.node {
+  cursor: pointer;
 }
 
 .node circle {
-  fill: black;
-  stroke: none;
+  stroke-width: 0;
+  transition: stroke-width 60ms;
+}
+
+.node.selected circle {
+  stroke-width: 6px;
 }
 
 .node text {

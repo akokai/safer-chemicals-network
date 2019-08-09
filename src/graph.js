@@ -23,7 +23,7 @@ const simulation = d3
     d3
       .forceLink()
       .id(d => d.id)
-      .strength(0.01)
+      .strength(0.05)
   )
   .force("charge", d3.forceManyBody())
   .force("collide", d3.forceCollide(20))
@@ -104,7 +104,10 @@ function updateLegend() {
 }
 
 function updateNodeColors() {
-  node.selectAll("circle").style("fill", d => color(d[groupKey]));
+  node
+    .selectAll("circle")
+    .style("fill", d => color(d[groupKey]))
+    .style("stroke", d => color(d[groupKey]));
 }
 
 /** Update everything when the grouping option is changed. */
@@ -163,7 +166,14 @@ function graph(data) {
     .enter()
     .append("line")
     .classed("edge", true)
-    .on("click", edgeClicked);
+    .attr("id", (d, i) => `e-${i}`)
+    .on("click", edgeClicked)
+    .on("mouseover", (d, i) => {
+      document.getElementById(`e-${i}`).setAttribute("class", "edge selected");
+    })
+    .on("mouseout", (d, i) => {
+      document.getElementById(`e-${i}`).setAttribute("class", "edge");
+    });
 
   node = svg
     .selectAll(".node")
@@ -171,7 +181,14 @@ function graph(data) {
     .enter()
     .append("g")
     .classed("node", true)
+    .attr("id", (d, i) => `n-${i}`)
     .on("click", nodeClicked)
+    .on("mouseover", (d, i) => {
+      document.getElementById(`n-${i}`).setAttribute("class", "node selected");
+    })
+    .on("mouseout", (d, i) => {
+      document.getElementById(`n-${i}`).setAttribute("class", "node");
+    })
     .call(
       d3
         .drag()
@@ -182,8 +199,9 @@ function graph(data) {
 
   node
     .append("circle")
-    .attr("r", 5)
-    .style("fill", d => color(d[groupKey]));
+    .attr("r", 6)
+    .style("fill", d => color(d[groupKey]))
+    .style("stroke", d => color(d[groupKey]));
   node
     .append("text")
     .text(d => d.label)
@@ -195,12 +213,12 @@ function graph(data) {
   simulation.force("link").links(data.edges);
 }
 
-/** Create DOM elements necessary for displaying the legend box & contents. */
-function createLegend(callback) {
-  const legendBox = fig.insert("div").attr("id", "legend-box");
+/** Create DOM elements necessary for displaying the legend & other widgets. */
+function decorate(handleSelect) {
+  const legendBox = fig.append("div").attr("id", "legend-box");
   legendBox.append("h6").text("Group by");
 
-  const select = legendBox.append("select").on("change", callback);
+  const select = legendBox.append("select").on("change", handleSelect);
 
   select
     .selectAll("option")
@@ -211,6 +229,11 @@ function createLegend(callback) {
 
   legendBox.append("h6").text("Legend");
   legendBox.append("div").attr("id", "legend");
+
+  const revealBox = fig
+    .append("div")
+    .attr("id", "reveal-box")
+    .style("display", "hidden"); // TODO
 }
 
 /** Initialize visualization and set window resize behaviour. */
@@ -219,7 +242,7 @@ function visualize(data) {
   groupPos = getGroupPositions(groups);
   color = createColorScale(groups);
   updateGroupPositions();
-  createLegend(event => selectGrouping(data.nodes));
+  decorate(event => selectGrouping(data.nodes));
   updateLegend();
   graph(data);
   window.addEventListener("resize", event => {
