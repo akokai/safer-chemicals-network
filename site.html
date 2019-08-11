@@ -16,15 +16,15 @@
         <link rel="stylesheet" type="text/css" href="/src/graph.css">
         <style>
           #figure {
-            width: 800px;
-            height: 480px;
-            /* Escape 720px-wide div */
-            margin-left: -40px;
-            margin-right: -40px;
+            width: 100%;
+          }
+          #graph {
+            width: 100%;
+            height: 500px;
           }
         </style>
         <div id="figure">
-          <svg id="graph" width="800" height="480"></svg>
+          <svg id="graph"></svg>
         </div>
         <script>
           const dataUrl = "/data/network.json"; /* would be different in Jekyll */
