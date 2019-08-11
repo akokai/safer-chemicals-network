@@ -13,22 +13,22 @@
     {
       "id": "1",
       "label": "GHS",
-      "Resource Type": "Method",
+      "Resource Type": "Standard",
       "Sector": "Chemicals",
       "Topic": "Hazard Assessment",
-      "url": "NA",
+      "url": "http://www.unece.org/trans/danger/publi/ghs/ghs_welcome_e.html",
       "title": "Globally Harmonized System for Classification and Labeling of Chemicals",
       "description": "Placeholder description"
     },
     {
       "id": "2",
       "label": "Safer Choice",
-      "Resource Type": "Standard",
-      "Sector": "Chemicals",
+      "Resource Type": "Certification",
+      "Sector": "Products",
       "Topic": "Hazard Assessment",
-      "url": "https://www.epa.gov/saferchoice/standard",
+      "url": "https://www.epa.gov/saferchoice/safer-choice-standard",
       "title": "US EPA Safer Choice Standard",
-      "description": "Placeholder description"
+      "description": "About 3000 consumer products have Safer Choice labels\u2026"
     },
     {
       "id": "3",
@@ -36,8 +36,8 @@
       "Resource Type": "Certification",
       "Sector": "Products",
       "Topic": "Green Design",
-      "url": "NA",
-      "title": "Cradle-to-Cradle Certified",
+      "url": "https://www.c2ccertified.org",
+      "title": "Cradle to Cradle Certified",
       "description": "Placeholder description"
     },
     {
@@ -46,7 +46,7 @@
       "Resource Type": "Standard",
       "Sector": "Built Environment",
       "Topic": "Green Design",
-      "url": "NA",
+      "url": "https://www.hpd-collaborative.org",
       "title": "Health Product Declaration (HPD)",
       "description": "The HPD is an open standard specification for the reporting of product contents and associated health information, for products used in the built environment."
     },
@@ -67,17 +67,17 @@
       "Sector": "Built Environment",
       "Topic": "Green Design",
       "url": "NA",
-      "title": "Placeholder title",
+      "title": "BIFMA e3 Standard",
       "description": "Placeholder description"
     },
     {
       "id": "7",
-      "label": "BIFMA LEVEL",
+      "label": "LEVEL",
       "Resource Type": "Certification",
       "Sector": "Built Environment",
       "Topic": "Green Design",
       "url": "NA",
-      "title": "Placeholder title",
+      "title": "BIFMA LEVEL Certification",
       "description": "Placeholder description"
     },
     {
@@ -92,7 +92,7 @@
     },
     {
       "id": "9",
-      "label": "TCO Certified",
+      "label": "TCO Cert",
       "Resource Type": "Certification",
       "Sector": "Electronics",
       "Topic": "Green Design",
@@ -102,7 +102,7 @@
     },
     {
       "id": "10",
-      "label": "GSC",
+      "label": "GS Cert",
       "Resource Type": "Certification",
       "Sector": "Textiles",
       "Topic": "Green Design",
@@ -112,7 +112,7 @@
     },
     {
       "id": "11",
-      "label": "GSC-BP",
+      "label": "GS Cert/BP",
       "Resource Type": "Certification",
       "Sector": "Built Environment",
       "Topic": "Green Design",
@@ -126,13 +126,13 @@
       "Resource Type": "Certification",
       "Sector": "Textiles",
       "Topic": "Green Design",
-      "url": "NA",
-      "title": "ZDHC Chemicals Module",
-      "description": "Placeholder description"
+      "url": "https://www.roadmaptozero.com/gateway/chemical-module/",
+      "title": "ZDHC Gateway Chemicals Module",
+      "description": "Note: The focus is on MRSL conformance specifically, so connections to other nodes here may be tenuous."
     },
     {
       "id": "13",
-      "label": "EPA SCIL",
+      "label": "SCIL",
       "Resource Type": "Resource",
       "Sector": "Chemicals",
       "Topic": "Green Design",
@@ -146,7 +146,7 @@
       "Resource Type": "Resource",
       "Sector": "Chemicals",
       "Topic": "Hazard Assessment",
-      "url": "NA",
+      "url": "https://commons.healthymaterials.net/",
       "title": "Chemical Hazard Data Commons",
       "description": "Placeholder description"
     },
@@ -172,7 +172,7 @@
     },
     {
       "id": "17",
-      "label": "IC2 Database",
+      "label": "IC2 DB",
       "Resource Type": "Resource",
       "Sector": "Chemicals",
       "Topic": "Hazard Assessment",
@@ -182,7 +182,7 @@
     },
     {
       "id": "18",
-      "label": "SUBSPORT",
+      "label": "Subsport",
       "Resource Type": "Resource",
       "Sector": "Chemicals",
       "Topic": "Alternatives Assessment",
@@ -192,7 +192,7 @@
     },
     {
       "id": "19",
-      "label": "ToxFMD DB",
+      "label": "ToxFMD",
       "Resource Type": "Resource",
       "Sector": "Chemicals",
       "Topic": "Hazard Assessment",
@@ -216,13 +216,13 @@
       "Resource Type": "Policy",
       "Sector": "Chemicals",
       "Topic": "Hazard Assessment",
-      "url": "NA",
-      "title": "Placeholder title",
-      "description": "Fill in from GS origin story"
+      "url": "https://fortress.wa.gov/ecy/publications/documents/0907041.pdf",
+      "title": "Washington (US): Alternatives to decaBDE",
+      "description": "The linked report uses GreenScreen (developed initially for this purpose) to identify safer alternatives to decaBDE\u2026 as per WA regulations (70.76 RCW)..."
     },
     {
       "id": "22",
-      "label": "Maine SCCP",
+      "label": "ME SCCP Law",
       "Resource Type": "Policy",
       "Sector": "Chemicals",
       "Topic": "Hazard Assessment",
@@ -236,7 +236,7 @@
       "Resource Type": "Policy",
       "Sector": "Products",
       "Topic": "Alternatives Assessment",
-      "url": "NA",
+      "url": "https://dtsc.ca.gov/scp/alternatives-analysis/",
       "title": "CA DTSC Alternatives Assessment Guidance",
       "description": "Placeholder description"
     },
@@ -292,12 +292,22 @@
     },
     {
       "id": "29",
-      "label": "ILFI LPC",
+      "label": "LPC",
       "Resource Type": "Certification",
       "Sector": "Products",
       "Topic": "Green Design",
       "url": "NA",
       "title": "Living Product Challenge",
+      "description": "Placeholder description"
+    },
+    {
+      "id": "30",
+      "label": "CleanGredients",
+      "Resource Type": "Resource",
+      "Sector": "Chemicals",
+      "Topic": "Green Design",
+      "url": "NA",
+      "title": "CleanGredients Database",
       "description": "Placeholder description"
     }
   ],
@@ -318,6 +328,18 @@
       "source": "2",
       "target": "1",
       "description": "Safer Choice uses definitions, technical criteria, metrics, and thresholds for hazard classification derived from GHS.",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "30",
+      "target": "2",
+      "description": "[TODO] Safer Choice provides the criteria for inclusion of substances in CleanGredients\u2026",
+      "Unnamed: 5": "NA"
+    },
+    {
+      "source": "13",
+      "target": "30",
+      "description": "[TODO] SCIL contains assessed \"theoretically pure chemicals\" that pass SC criteria and appear in proprietary forumlations, which are on CleanGredients\u2026",
       "Unnamed: 5": "NA"
     },
     {
