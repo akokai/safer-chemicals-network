@@ -15,6 +15,7 @@ var groupPos;
 var color;
 var node;
 var edge;
+var card;
 
 const simulation = d3
   .forceSimulation()
@@ -98,7 +99,7 @@ function updateLegend() {
     .append("div");
   legendItems
     .append("span")
-    .attr("class", "legend-item")
+    .classed("legend-item", true)
     .style("background-color", d => color(d.name));
   legendItems.append("span").text(d => d.name);
 }
@@ -150,12 +151,25 @@ function dragended(d) {
 
 function nodeClicked(d) {
   // TODO
-  console.log(d.title);
+  card.select("#title").text(d.title);
+  card.select("#description").text(d.description);
+  card.select("#reference").attr("href", d.url);
+  card.classed("hidden", false);
 }
 
 function edgeClicked(d) {
   // TODO
-  console.log(d.description);
+  card.select("#title").text(`${d.source.label} → ${d.target.label}`);
+  card.select("#description").text(d.description);
+  // TODO: add edge.url in dataset...
+  card
+    .select("#reference")
+    .attr("href", "https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+  card.classed("hidden", false);
+}
+
+function bgClicked() {
+  card.classed("hidden", true);
 }
 
 /** Set up force-directed graph data visualization. */
@@ -215,8 +229,20 @@ function graph(data) {
 
 /** Create DOM elements necessary for displaying the legend & other widgets. */
 function decorate(handleSelect) {
+  const rect = svg
+    .append("rect")
+    .attr("id", "bg")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", dimensions.width)
+    .attr("height", dimensions.height)
+    .on("click", bgClicked);
+
   const legendBox = fig.append("div").attr("id", "legend-box");
-  legendBox.append("h6").text("Group by");
+  legendBox
+    .append("div")
+    .classed("heading", true)
+    .text("Group by");
 
   const select = legendBox.append("select").on("change", handleSelect);
 
@@ -227,13 +253,28 @@ function decorate(handleSelect) {
     .append("option")
     .text(d => d);
 
-  legendBox.append("h6").text("Legend");
+  legendBox
+    .append("div")
+    .classed("heading", true)
+    .text("Legend");
   legendBox.append("div").attr("id", "legend");
 
-  const revealBox = fig
+  card = fig
     .append("div")
-    .attr("id", "reveal-box")
-    .style("display", "hidden"); // TODO
+    .attr("id", "card")
+    .classed("hidden", true);
+
+  card
+    .append("div")
+    .attr("id", "title")
+    .classed("heading", true);
+  card.append("div").attr("id", "description");
+  card
+    .append("div")
+    .append("a")
+    .attr("id", "reference")
+    .attr("target", "_blank")
+    .text("Reference");
 }
 
 /** Initialize visualization and set window resize behaviour. */

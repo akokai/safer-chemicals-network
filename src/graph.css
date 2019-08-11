@@ -36,6 +36,31 @@
   font-weight: 400;
 }
 
+#card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  min-width: 160px;
+  height: 160px;
+  align-items: flex-end;
+  background: none;
+}
+
+#card #title {
+  min-width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#card.hidden {
+  display: none;
+}
+
 #legend-box {
   box-sizing: border-box;
   display: flex;
@@ -53,13 +78,14 @@
 
 #legend-box select {
   width: 120px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 #legend {
   display: flex;
   flex-direction: column;
   font-size: 12px;
+  line-height: 16px;
 }
 
 .legend-item {
@@ -68,6 +94,23 @@
   height: 10px;
   margin: auto 2px;
   border-radius: 5px;
+}
+
+.heading {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 4px 0 4px 0;
+  color: rgb(125, 128, 132);
+}
+
+.right {
+  text-align: right;
+}
+
+#bg {
+  fill: rgb(251, 251, 251);
+  stroke: none;
+  z-index: 0;
 }
 
 .matte {
