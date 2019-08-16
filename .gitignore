@@ -1,5 +1,9 @@
 # Excel
 ~$*
+*.xlsx
+
+# Ignore errant pythons
+*.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
