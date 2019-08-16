@@ -232,7 +232,7 @@ function graph(data) {
     .append("text")
     .text(d => d.label)
     .attr("text-anchor", "middle")
-    .attr("alignment-baseline", "middle");
+    .attr("dy", "2.75px");
 
   simulation.nodes(data.nodes).on("tick", ticked);
 
