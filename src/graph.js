@@ -304,12 +304,11 @@ function visualize(parsed) {
   });
 }
 
-/** CSV row conversion function */
+/** CSV row conversion function, without destructuring assignment */
 function readCSV(row) {
-  return {
-    ...row,
-    links: row.links.split(" ")
-  };
+  const ret = Object.assign({}, row);
+  ret.links = ret.links.split(" ");
+  return ret;
 }
 
 Promise.all([
