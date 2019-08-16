@@ -164,7 +164,7 @@ function updateCardContents(d) {
     .data(d.links)
     .enter()
     .append("span")
-    .html((d, i) => ` <a href="${d}">[${i + 1}]</a>`);
+    .html((d, i) => ` <a target="_blank" href="${d}">[${i + 1}]</a>`);
 }
 
 function nodeClicked(d) {
