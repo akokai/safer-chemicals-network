@@ -5,9 +5,12 @@
 
 /* global d3, dataUrl */
 
-const GROUPING_OPTIONS = ["Resource Type", "Sector", "Topic"];
+/** This must correspond to nodes.csv columns */
+const GROUPING_OPTIONS = ["Resource Type", "Design Level", "Industry Sector"];
+
 const fig = d3.select("#figure");
 const svg = d3.select("#graph");
+
 var dimensions = document.getElementById("graph").getBoundingClientRect();
 var groupKey = GROUPING_OPTIONS[0];
 var groups;
@@ -149,22 +152,31 @@ function dragended(d) {
   d.fy = null;
 }
 
+function updateCardContents(d) {
+  card.select("#description").text(d.description);
+  card
+    .select("#references")
+    .selectAll("span")
+    .remove();
+  const links = card
+    .select("#references")
+    .selectAll("span")
+    .data(d.links)
+    .enter()
+    .append("span")
+    .html((d, i) => ` <a href="d">[${i + 1}]</a>`);
+}
+
 function nodeClicked(d) {
   // TODO
   card.select("#title").text(d.title);
-  card.select("#description").text(d.description);
-  card.select("#reference").attr("href", d.url);
+  updateCardContents(d);
   card.classed("hidden", false);
 }
 
 function edgeClicked(d) {
-  // TODO
   card.select("#title").text(`${d.source.label} → ${d.target.label}`);
-  card.select("#description").text(d.description);
-  // TODO: add edge.url in dataset...
-  card
-    .select("#reference")
-    .attr("href", "https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+  updateCardContents(d);
   card.classed("hidden", false);
 }
 
@@ -269,16 +281,17 @@ function decorate(handleSelect) {
     .attr("id", "title")
     .classed("heading", true);
   card.append("div").attr("id", "description");
-  card
-    .append("div")
-    .append("a")
-    .attr("id", "reference")
-    .attr("target", "_blank")
-    .text("Reference");
+  const sources = card.append("div");
+  sources
+    .append("span")
+    .classed("quiet", true)
+    .text("Sources:");
+  sources.append("span").attr("id", "references");
 }
 
 /** Initialize visualization and set window resize behaviour. */
-function visualize(data) {
+function visualize(parsed) {
+  const data = { nodes: parsed[0], edges: parsed[1] };
   groups = getGroups(data.nodes);
   groupPos = getGroupPositions(groups);
   color = createColorScale(groups);
@@ -291,4 +304,15 @@ function visualize(data) {
   });
 }
 
-d3.json(dataUrl).then(visualize);
+/** CSV row conversion function */
+function readCSV(row) {
+  return {
+    ...row,
+    links: row.links.split(" ")
+  };
+}
+
+Promise.all([
+  d3.csv(`${dataUrl}/nodes.csv`, readCSV),
+  d3.csv(`${dataUrl}/edges.csv`, readCSV)
+]).then(visualize);

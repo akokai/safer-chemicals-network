@@ -1,9 +1,17 @@
+body {
+  font-size: 12px;
+}
+
 #figure {
   position: relative;
   box-sizing: border-box;
   margin: auto;
   width: 100%;
   height: 100%;
+}
+
+text {
+  fill: rgb(52, 55, 65);
 }
 
 .edge {
@@ -49,6 +57,7 @@
   height: 160px;
   align-items: flex-end;
   background: none;
+  font-size: 12px;
 }
 
 #card #title {
@@ -84,7 +93,6 @@
 #legend {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
   line-height: 16px;
 }
 
@@ -97,10 +105,9 @@
 }
 
 .heading {
-  font-size: 12px;
   font-weight: 600;
   margin: 4px 0 4px 0;
-  color: rgb(125, 128, 132);
+  color: rgb(121, 125, 130);
 }
 
 .right {
