@@ -116,14 +116,14 @@
     legend.selectAll("div").remove();
     const legendItems = legend
       .selectAll("div")
-      .data(groups)
+      .data(groups.map(d => d.name).sort())
       .enter()
       .append("div");
     legendItems
       .append("span")
       .classed("legend-item", true)
-      .style("background-color", d => color(d.name));
-    legendItems.append("span").text(d => d.name);
+      .style("background-color", d => color(d));
+    legendItems.append("span").text(d => d);
   }
 
   function updateNodeColors() {
