@@ -21,6 +21,7 @@
   var node;
   var edge;
   var card;
+  var arrange = true;
 
   const simulation = d3
     .forceSimulation()
@@ -84,16 +85,29 @@
     );
     // Recalculate group positions and restart simulation
     groupPos = getGroupPositions(groups);
-    updateGroupPositions();
+    updateSimulation();
   }
 
-  /** Remove existing and apply new positioning forces to the simulation. */
-  function updateGroupPositions() {
+  /** Update positioning and link forces on the simulation. */
+  function updateSimulation() {
+    const linkStrength = arrange ? 0.05 : 0.1;
+    simulation.force("link").strength(linkStrength);
     simulation.force("x", null).force("y", null);
-    simulation
-      .force("x", d3.forceX(node => groupPos[node[groupKey]].x).strength(0.1))
-      .force("y", d3.forceY(node => groupPos[node[groupKey]].y).strength(0.1));
+    if (arrange) {
+      simulation
+        .force("x", d3.forceX(node => groupPos[node[groupKey]].x).strength(0.1))
+        .force(
+          "y",
+          d3.forceY(node => groupPos[node[groupKey]].y).strength(0.1)
+        );
+    }
     simulation.alpha(1).restart();
+  }
+
+  /** Toggle whether nodes are positionally arranged into groups. */
+  function toggleArranged() {
+    arrange = this.checked;
+    updateSimulation();
   }
 
   /** Update the legend to reflect categories for selected grouping option. */
@@ -127,7 +141,7 @@
     updateLegend();
     updateNodeColors();
     groupPos = getGroupPositions(groups);
-    updateGroupPositions();
+    updateSimulation();
   }
 
   function ticked() {
@@ -237,6 +251,7 @@
       .attr("r", 6)
       .style("fill", d => color(d[groupKey]))
       .style("stroke", d => color(d[groupKey]));
+
     node
       .append("text")
       .text(d => d.label)
@@ -260,6 +275,7 @@
       .on("click", bgClicked);
 
     const legendBox = fig.append("div").attr("id", "legend-box");
+
     const groupBy = legendBox
       .append("label")
       .classed("heading", true)
@@ -273,6 +289,21 @@
       .enter()
       .append("option")
       .text(d => d);
+
+    const keepArranged = legendBox
+      .append("label")
+      .style("margin-bottom", "4px");
+
+    keepArranged
+      .append("input")
+      .attr("type", "checkbox")
+      .property("checked", true)
+      .on("change", toggleArranged);
+
+    keepArranged
+      .append("span")
+      .style("margin-left", "4px")
+      .text("Keep arranged");
 
     legendBox
       .append("div")
@@ -289,8 +320,11 @@
       .append("div")
       .attr("id", "title")
       .classed("heading", true);
+
     card.append("div").attr("id", "description");
+
     const sources = card.append("div");
+
     sources
       .append("span")
       .classed("quiet", true)
@@ -304,10 +338,10 @@
     groups = getGroups(data.nodes);
     groupPos = getGroupPositions(groups);
     color = createColorScale(groups);
-    updateGroupPositions();
     decorate(event => selectGrouping(data.nodes));
     updateLegend();
     graph(data);
+    updateSimulation();
     window.addEventListener("resize", event => {
       updateDimensions(data.nodes);
     });
