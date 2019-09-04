@@ -171,7 +171,8 @@
     d.fy = null;
   }
 
-  function updateCardContents(d) {
+  function updateCardContents(d, itemID) {
+    card.attr("data-item", itemID);
     card.select("#description").text(d.description);
     card
       .select("#references")
@@ -187,19 +188,28 @@
   }
 
   function nodeClicked(d) {
-    // TODO
+    if (!card.classed("hidden") && card.attr("data-item") === d.id) {
+      card.classed("hidden", true);
+      return;
+    }
     card.select("#title").text(d.title);
-    updateCardContents(d);
+    updateCardContents(d, d.id);
     card.classed("hidden", false);
   }
 
   function edgeClicked(d) {
+    const itemID = `${d.source.index}-${d.target.index}`;
+    if (!card.classed("hidden") && card.attr("data-item") === itemID) {
+      card.classed("hidden", true);
+      return;
+    }
     card.select("#title").text(`${d.source.label} → ${d.target.label}`);
-    updateCardContents(d);
+    updateCardContents(d, itemID);
     card.classed("hidden", false);
   }
 
   function bgClicked() {
+    card.attr("data-item", null);
     card.classed("hidden", true);
   }
 
