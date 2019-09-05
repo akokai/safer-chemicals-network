@@ -1,6 +1,9 @@
 /**
- * Network graph visualization (work in progress)
- * Based on Force-Directed Graph by Mike Bostock: https://observablehq.com/@d3/force-directed-graph
+ * Network graph visualization:
+ *   "Mapping the safer chemical substitution knowledge network"
+ *   Akos Kokai (2019)
+ * Based on Force-Directed Graph by Mike Bostock:
+ *   https://observablehq.com/@d3/force-directed-graph
  */
 
 /* global d3 */
