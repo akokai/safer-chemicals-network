@@ -1,8 +1,5 @@
-body {
-  font-size: 12px;
-}
-
 #figure {
+  font-size: 12px;
   position: relative;
   box-sizing: border-box;
   margin: auto;
