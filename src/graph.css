@@ -98,8 +98,16 @@ text {
 
 .heading {
   font-weight: 600;
-  margin: 4px 0;
   color: rgb(121, 125, 130);
+}
+
+div.heading {
+  margin: 4px 0;
+}
+
+span.heading {
+  display: block;
+  margin: 4px 0 0 0;
 }
 
 .right {

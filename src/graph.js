@@ -289,14 +289,16 @@
 
     const legendBox = fig.append("div").attr("id", "legend-box");
 
-    const groupBy = legendBox
-      .append("label")
+    const groupBy = legendBox.append("label");
+
+    groupBy
+      .append("span")
       .classed("heading", true)
       .text("Group by");
 
-    const select = groupBy.append("select").on("change", handleSelect);
+    const menu = groupBy.append("select").on("change", handleSelect);
 
-    select
+    menu
       .selectAll("option")
       .data(GROUPING_OPTIONS)
       .enter()
