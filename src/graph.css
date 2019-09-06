@@ -79,7 +79,7 @@ text {
 }
 
 #legend-box select {
-  margin: 6px 0 4px 0;
+  margin: 8px 0;
 }
 
 #legend {
@@ -107,7 +107,6 @@ div.heading {
 
 span.heading {
   display: block;
-  margin: 4px 0 0 0;
 }
 
 .right {
