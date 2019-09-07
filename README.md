@@ -10,7 +10,7 @@ The data visualization is constructed in JavaScript using [D3.js](https://d3js.o
 
 ## Contributing
 
-I welcome contributions to the data as well as the JavaScript code. If you'd like me to add elements to the data, please first read about [why and how I'm doing this](https://kaios.net/research/network), and also please include references (links, etc) with your suggestions.
+I welcome contributions to the data as well as the visualization. For data changes, please first read [about the project](https://kaios.net/research/network) and also please include references (links, etc).
 
 To contribute, use any of these methods:
 
