@@ -4,6 +4,7 @@
 
 # Ignore errant pythons
 *.py
+Pipfile*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
