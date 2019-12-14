@@ -25,9 +25,9 @@ source,target,description,links
 17,1,The IC2 Database compiles publicly available GreenScreen assessments.,http://theic2.org/hazard-assessment
 17,33,The IC2 Database compiles publicly available QCAT assessments.,http://theic2.org/hazard-assessment
 18,1,Subsport references GreenScreen as a tool that can be used for safer substitution.,https://www.subsportplus.eu/substitution-tools
-20,0,MaterialWise alternatives assessment portfolios include substance hazard profiles expressed in terms of the GHS framework.,https://www.materialwise.org
-20,3,MaterialWise alternatives assessment portfolios include substance hazard profiles expressed in terms of the C2C material health assessment framework.,https://www.materialwise.org
-16,20,"Pharos programmatically provides chemical identification and hazard information from to MaterialWise, supporting hazard screening against authoritative hazard lists (such as those recognized by the C2C material health assessment methodology).",https://www.materialwise.org/screen/
+20,0,ChemForward alternatives assessment portfolios include substance hazard profiles expressed in terms of the GHS framework.,https://www.chemforward.org/
+20,3,ChemForward alternatives assessment portfolios include substance hazard profiles expressed in terms of the C2C material health assessment framework.,https://www.chemforward.org/
+16,20,"Pharos programmatically provides chemical identification and hazard information from to ChemForward's screening tool MaterialWise, supporting hazard screening against authoritative hazard lists (such as those recognized by the C2C material health assessment methodology).",https://www.materialwise.org/screen/
 21,1,"GreenScreen methodology is part of the assessment process for ToxFMD Screened Chemistry, and the ToxFMD Library provides GreenScreen assessments to subscribers.",https://www.screenedchemistry.com https://database.toxservices.com
 21,13,The ToxFMD program can be used to document conformance with the ZDHC MRSL. Formulations that are ToxFMD-certified can be included in the ZDHC Gateway and will be recognized as not containing any of the hazardous substances on the MRSL.,https://www.toxservices.com/services/fmd.php
 22,1,Scivera LLC is a licensed GreenScreen profiler.,https://www.greenscreenchemicals.org/professionals/profilers
