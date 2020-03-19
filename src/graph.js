@@ -93,8 +93,6 @@
 
   /** Update positioning and link forces on the simulation. */
   function updateSimulation() {
-    const linkStrength = arrange ? 0.05 : 0.1;
-    simulation.force("link").strength(linkStrength);
     simulation.force("x", null).force("y", null);
     if (arrange) {
       simulation
@@ -261,7 +259,7 @@
 
     node
       .append("circle")
-      .attr("r", 6)
+      .attr("r", 8)
       .style("fill", d => color(d[groupKey]))
       .style("stroke", d => color(d[groupKey]));
 

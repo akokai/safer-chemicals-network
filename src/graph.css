@@ -33,11 +33,11 @@ text {
 }
 
 .node.selected circle {
-  stroke-width: 6px;
+  stroke-width: 8px;
 }
 
 .node text {
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 400;
 }
 
