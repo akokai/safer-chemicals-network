@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/">
   <meta name="DC.title" content="Mapping the safer chemical substitution knowledge network">
   <meta name="DC.creator" content="Akos Kokai">
@@ -28,15 +29,24 @@
       text-align: end;
       font-size: 12px;
     }
+    #matte {
+      box-sizing: border-box;
+      padding: 20px;
+      width: 100%;
+      height: 100vh;
+    }
+    #graph {
+      width: 100%;
+      height: 100%;
+    }
   </style>
 </head>
 
 <body>
-  <div class="matte">
+  <div id="matte">
     <div id="figure" data-url="data">
-      <svg id="graph" width="100%" height="100%"></svg>
+      <svg id="graph"></svg>
     </div>
-  </div>
   </div>
   <div class="note"><a href="https://kaios.net/research/network">What is this?</a></div>
   <script src="https://d3js.org/d3.v5.min.js"></script>

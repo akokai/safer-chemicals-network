@@ -1,14 +1,14 @@
 /**
  * Network graph visualization:
  *   "Mapping the safer chemical substitution knowledge network"
- *   Akos Kokai (2019)
+ *   Akos Kokai (2020)
  * Based on Force-Directed Graph by Mike Bostock:
  *   https://observablehq.com/@d3/force-directed-graph
  */
 
 /* global d3 */
 
-(function() {
+(function () {
   /** This must correspond to nodes.csv columns */
   const GROUPING_OPTIONS = ["Resource Type", "Design Level", "Industry Sector"];
 
@@ -32,7 +32,7 @@
       "link",
       d3
         .forceLink()
-        .id(d => d.id)
+        .id((d) => d.id)
         .strength(0.05)
     )
     .force("charge", d3.forceManyBody())
@@ -46,11 +46,11 @@
   function getGroups(nodes) {
     return d3
       .nest()
-      .key(d => d[groupKey])
+      .key((d) => d[groupKey])
       .entries(nodes)
-      .map(item => ({
+      .map((item) => ({
         name: item.key,
-        value: item.values.length
+        value: item.values.length,
       }))
       .sort((a, b) => b.value - a.value);
   }
@@ -60,7 +60,7 @@
     return d3
       .scaleOrdinal()
       .range(d3.schemeSet2)
-      .domain(groups.map(d => d.name));
+      .domain(groups.map((d) => d.name));
   }
 
   /**
@@ -69,7 +69,7 @@
   function getGroupPositions(groups) {
     const root = d3
       .hierarchy({ name: "root", children: groups })
-      .sum(d => d.value);
+      .sum((d) => d.value);
     const packed = d3.pack().size([dimensions.width, dimensions.height])(root);
     return packed.children.reduce((ret, item) => {
       ret[item.data.name] = { x: item.x, y: item.y };
@@ -96,10 +96,13 @@
     simulation.force("x", null).force("y", null);
     if (arrange) {
       simulation
-        .force("x", d3.forceX(node => groupPos[node[groupKey]].x).strength(0.1))
+        .force(
+          "x",
+          d3.forceX((node) => groupPos[node[groupKey]].x).strength(0.1)
+        )
         .force(
           "y",
-          d3.forceY(node => groupPos[node[groupKey]].y).strength(0.1)
+          d3.forceY((node) => groupPos[node[groupKey]].y).strength(0.1)
         );
     }
     simulation.alpha(1).restart();
@@ -117,21 +120,21 @@
     legend.selectAll("div").remove();
     const legendItems = legend
       .selectAll("div")
-      .data(groups.map(d => d.name).sort())
+      .data(groups.map((d) => d.name).sort())
       .enter()
       .append("div");
     legendItems
       .append("span")
       .classed("legend-item", true)
-      .style("background-color", d => color(d));
-    legendItems.append("span").text(d => d);
+      .style("background-color", (d) => color(d));
+    legendItems.append("span").text((d) => d);
   }
 
   function updateNodeColors() {
     node
       .selectAll("circle")
-      .style("fill", d => color(d[groupKey]))
-      .style("stroke", d => color(d[groupKey]));
+      .style("fill", (d) => color(d[groupKey]))
+      .style("stroke", (d) => color(d[groupKey]));
   }
 
   /** Update everything when the grouping option is changed. */
@@ -147,12 +150,12 @@
 
   function ticked() {
     edge
-      .attr("x1", d => d.source.x)
-      .attr("y1", d => d.source.y)
-      .attr("x2", d => d.target.x)
-      .attr("y2", d => d.target.y);
+      .attr("x1", (d) => d.source.x)
+      .attr("y1", (d) => d.source.y)
+      .attr("x2", (d) => d.target.x)
+      .attr("y2", (d) => d.target.y);
 
-    node.attr("transform", d => "translate(" + d.x + ", " + d.y + ")");
+    node.attr("transform", (d) => "translate(" + d.x + ", " + d.y + ")");
   }
 
   function dragstarted(d) {
@@ -175,10 +178,7 @@
   function updateCardContents(d, itemID) {
     card.attr("data-item", itemID);
     card.select("#description").text(d.description);
-    card
-      .select("#references")
-      .selectAll("span")
-      .remove();
+    card.select("#references").selectAll("span").remove();
     const links = card
       .select("#references")
       .selectAll("span")
@@ -188,12 +188,12 @@
       .html((d, i) => ` <a target="_blank" href="${d}">[${i + 1}]</a>`);
   }
 
+  function hideCard() {
+    card.classed("hidden", true);
+  }
+
   function nodeClicked(d) {
-    if (!card.classed("hidden") && card.attr("data-item") === d.id) {
-      card.classed("hidden", true);
-      return;
-    }
-    card.select("#title").text(d.title);
+    card.select("#card-title").text(d.title);
     updateCardContents(d, d.id);
     card.classed("hidden", false);
   }
@@ -201,17 +201,17 @@
   function edgeClicked(d) {
     const itemID = `${d.source.index}-${d.target.index}`;
     if (!card.classed("hidden") && card.attr("data-item") === itemID) {
-      card.classed("hidden", true);
+      hideCard();
       return;
     }
-    card.select("#title").text(`${d.source.label} → ${d.target.label}`);
+    card.select("#card-title").text(`${d.source.label} → ${d.target.label}`);
     updateCardContents(d, itemID);
     card.classed("hidden", false);
   }
 
   function bgClicked() {
     card.attr("data-item", null);
-    card.classed("hidden", true);
+    hideCard();
   }
 
   /** Set up force-directed graph data visualization. */
@@ -260,12 +260,12 @@
     node
       .append("circle")
       .attr("r", 8)
-      .style("fill", d => color(d[groupKey]))
-      .style("stroke", d => color(d[groupKey]));
+      .style("fill", (d) => color(d[groupKey]))
+      .style("stroke", (d) => color(d[groupKey]));
 
     node
       .append("text")
-      .text(d => d.label)
+      .text((d) => d.label)
       .attr("text-anchor", "middle")
       .attr("dy", "2.75px");
 
@@ -285,27 +285,25 @@
       .attr("height", dimensions.height)
       .on("click", bgClicked);
 
-    const legendBox = fig.append("div").attr("id", "legend-box");
+    const ctrlBox = fig.append("div").attr("id", "ctrl-box");
 
-    const groupBy = legendBox.append("label");
+    const groupBy = ctrlBox.append("label").classed("group-by", true);
 
-    groupBy
-      .append("span")
-      .classed("heading", true)
-      .text("Group by");
+    groupBy.append("span").classed("heading", true).text("Group by");
 
-    const menu = groupBy.append("select").on("change", handleSelect);
+    const menu = groupBy
+      .append("select")
+      .classed("group-by", true)
+      .on("change", handleSelect);
 
     menu
       .selectAll("option")
       .data(GROUPING_OPTIONS)
       .enter()
       .append("option")
-      .text(d => d);
+      .text((d) => d);
 
-    const keepArranged = legendBox
-      .append("label")
-      .style("margin-bottom", "4px");
+    const keepArranged = ctrlBox.append("label").style("margin-bottom", "4px");
 
     keepArranged
       .append("input")
@@ -318,30 +316,29 @@
       .style("margin-left", "4px")
       .text("Keep arranged");
 
-    legendBox
-      .append("div")
-      .classed("heading", true)
-      .text("Legend");
+    const legendBox = fig.append("div").attr("id", "legend-box");
+
+    legendBox.append("div").classed("heading", true).text("Legend");
     legendBox.append("div").attr("id", "legend");
 
-    card = fig
-      .append("div")
-      .attr("id", "card")
-      .classed("hidden", true);
+    card = fig.append("div").attr("id", "card").classed("hidden", true);
 
-    card
+    const cardHeader = card.append("div").attr("id", "card-header");
+
+    cardHeader
       .append("div")
-      .attr("id", "title")
-      .classed("heading", true);
+      .attr("id", "card-x")
+      .append("a")
+      .on("click", hideCard)
+      .text("🅧");
+
+    cardHeader.append("div").attr("id", "card-title").classed("heading", true);
 
     card.append("div").attr("id", "description");
 
     const sources = card.append("div");
 
-    sources
-      .append("span")
-      .classed("quiet", true)
-      .text("Sources:");
+    sources.append("span").classed("gray", true).text("Sources:");
     sources.append("span").attr("id", "references");
   }
 
@@ -351,11 +348,11 @@
     groups = getGroups(data.nodes);
     groupPos = getGroupPositions(groups);
     color = createColorScale(groups);
-    decorate(event => selectGrouping(data.nodes));
+    decorate((event) => selectGrouping(data.nodes));
     updateLegend();
     graph(data);
     updateSimulation();
-    window.addEventListener("resize", event => {
+    window.addEventListener("resize", (event) => {
       updateDimensions(data.nodes);
     });
   }
@@ -369,6 +366,6 @@
 
   Promise.all([
     d3.csv(`${dataUrl}/nodes.csv`, readCSV),
-    d3.csv(`${dataUrl}/edges.csv`, readCSV)
+    d3.csv(`${dataUrl}/edges.csv`, readCSV),
   ]).then(visualize);
 })();

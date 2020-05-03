@@ -7,6 +7,13 @@
   height: 100%;
 }
 
+#bg {
+  fill: rgb(255, 255, 255);
+  opacity: 0;
+  stroke: none;
+  z-index: 0;
+}
+
 text {
   fill: rgb(52, 55, 65);
 }
@@ -43,31 +50,46 @@ text {
 
 #card {
   box-sizing: border-box;
+  padding: 8px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   z-index: 1;
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 25%;
-  min-width: 160px;
-  height: 160px;
+  top: 20%;
+  right: 15%;
+  width: 70%;
+  height: auto;
   align-items: flex-end;
-  background: none;
+  background-color: rgb(229, 230, 228);
   font-size: 12px;
-}
-
-#card #title {
-  min-width: 100%;
-  text-align: center;
-  white-space: nowrap;
 }
 
 #card.hidden {
   display: none;
 }
 
-#legend-box {
+#card-header {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#card-x {
+  cursor: pointer;
+}
+
+#card-title {
+  width: 100%;
+  text-align: center;
+}
+
+#description {
+  margin: 4px 0;
+}
+
+#ctrl-box {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -75,24 +97,44 @@ text {
   position: absolute;
   top: 0;
   left: 0;
-  width: 160px;
+  width: auto;
 }
 
-#legend-box select {
+.group-by {
+  /* Override Wordpress styles for form elements */
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+select.group-by {
   margin: 8px 0;
 }
 
+#legend-box {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+}
+
 #legend {
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  line-height: 16px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#legend div {
+  flex-shrink: 0;
+  margin: 4px 4px 0 0;
 }
 
 .legend-item {
   display: inline-block;
   width: 10px;
   height: 10px;
-  margin: auto 2px;
+  margin: auto 4px auto 0;
   border-radius: 5px;
 }
 
@@ -113,16 +155,18 @@ span.heading {
   text-align: right;
 }
 
-#bg {
-  fill: rgb(255, 255, 255);
-  opacity: 0;
-  stroke: none;
-  z-index: 0;
-}
-
-.matte {
-  box-sizing: border-box;
-  padding: 20px;
-  height: 100vh;
-  margin: auto;
+/* LARGER SCREENS */
+/* (Responsiveness could be improved...) */
+@media (min-width: 480px) {
+  #legend-box {
+    width: auto;
+  }
+  #legend {
+    flex-direction: column;
+  }
+  #card {
+    width: 40%;
+    top: 16px;
+    right: 16px;
+  }
 }
